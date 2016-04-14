@@ -4,8 +4,15 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 
-function success(data) {
-  for(var i = 0; i < data.length; i++) {
-    console.log(data[i]);
+function success(results) {
+  for(var i = 0; i < results.length; i++) {
+    currentResult = results[i];
+
+    console.log(currentResult);
+
+    var item = $('<div></div>');
+    item.text(currentResult["What are you doing?"] + ": " + currentResult["Mood"]);
+
+    $("body").append(item);
   }
 }
